@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+:root{
+ 
+  --color-title:#363f5f;
+  --green:#49aa26;
+  --light-green:#3dd705;
+  --red:#e92929;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+html{
+  font-size: 93.75%; /*15px*/
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #f0f2f5;
+}
+/* HEADER */
+
+header{
+  background-color: #2d4a22;
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+#logo{
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 100;
+}
+/* MAIN */
+.container{
+  width: min(90vw , 1120px);
+  margin:0 auto;
+}
+/* TITLE */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+h2{
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-title);
+  font-weight: 400;
+}
+/*BALANCE */
+#balance{
+  margin-top: -8rem;  
+}
+#balance h2{
+ color: #FFF; 
+ margin-top: 0;
+}
+
+.card{
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--color-title);
+  background: #FFFFFF;
+}
+.card h3{
+font-size: 1rem;
+font-weight: 400;
+display: flex;
+justify-content: space-between;
+}
+.card p{
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+.card.total{
+  background: var(--green);
+  color: #FFF;
+}
+/*TRANSACTIONS*/
+#transactions{
+  color: var(--color-title);
+}
+/* Buttons*/
+a{
+  color: #3dd705;
+  text-decoration: none;
+}
+a:hover{
+  color: #2d4a22;
+}
+.button.new{
+  display: inline-block;
+  margin: .8rem 0;
+}
+button{
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: #fff;
+  background: var(--green);
+  font-size: .9rem;
+  padding: 0;
+  border-radius: 0.25r em;
+  cursor: pointer;
+}
+button:hover{
+    background: var(--light-green);;
+}
+.input-group.actions .button,
+.input-group.actions button{
+  width: 40%;
+}
+.button.cancel{
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  opacity: 0.6;
+}
+.button.cancel:hover{
+  opacity: 1;
+  background:var(--red);
+  color: #FFF;
+}
+/*TABLE*/
+#transactions{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+#data-table{
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color:#969cb3;
+}
+table thead  tr th:first-child, 
+table tbody  tr td:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+table th{
+  background: #FFF;
+  text-align: left;  
+  opacity: .6;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  color: var(--color-title);
+}
+table td{
+  background: #FFF;
+  padding: 1rem 2rem;
+}
+table tbody tr{
+  opacity: .7;
+}
+table tbody tr:hover{
+  opacity: 1;
+}
+table tbody{
+  background: #FFF;
+  padding: 1rem 2rem;
+}
+td.description{
+  color:var(--color-title);
+}
+td.income{
+    color: #12a454;
+}
+td.expense{
+    color: #e92929;
+}
+/*FOOTER */
+
+/*MODAL*/
+.modal-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+.modal-overlay.active{
+   opacity: 1;
+   visibility: visible; 
+}
+.modal{
+  background: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+.modal-content{
+  max-width: 500px;
+}
+/*FORM*/
+input{
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+.input-group{
+  margin-top: 0.8rem;
+}
+.input-group small{
+ opacity: 0.4;
+}
+.input-group.actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer{
+  padding:4rem 2rem;
+  text-align: center;
+  color: var(--color-title);
+  opacity: 0.6;
+}
+/*RESPONSIVE*/
+@media (min-width:800px) {
+  html{
+    font-size: 87.5%; /*15px*/
+  }
+  #balance{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+}
